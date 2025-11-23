@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GPS Tracker (Local)</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Personal GPS tracker PWA - stores locations locally and lets you export them." />
+</head>
+<body>
+  <main class="container">
+    <h1>GPS Tracker</h1>
+    <p class="muted">This app tracks your location (with permission) and stores it locally in your browser.</p>
+
+    <div class="controls">
+      <button id="startBtn">Start Tracking</button>
+      <button id="stopBtn" disabled>Stop Tracking</button>
+      <button id="exportBtn">Export CSV</button>
+      <button id="clearBtn">Clear Data</button>
+    </div>
+
+    <section class="status">
+      <div>Tracking: <span id="trackingState">stopped</span></div>
+      <div>Records: <span id="recordCount">0</span></div>
+      <div id="currentPos">No position yet</div>
+    </section>
+
+    <section class="list">
+      <table id="recordsTable">
+        <thead>
+          <tr><th>#</th><th>Timestamp</th><th>Latitude</th><th>Longitude</th><th>Accuracy (m)</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <footer>
+      <small>Requires secure context (HTTPS or localhost). Works best on mobile browsers with high-accuracy enabled.</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
